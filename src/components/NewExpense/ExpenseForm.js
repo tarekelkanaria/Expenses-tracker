@@ -3,7 +3,7 @@ import "./ExpenseForm.css";
 const ExpenseForm = ({ userSubmit, cancelExpense }) => {
   const [expense, setExpense] = useState({
     title: "",
-    amount: "",
+    amount: 0.01,
     date: "",
   });
   const handleTitle = (e) => {
@@ -19,14 +19,14 @@ const ExpenseForm = ({ userSubmit, cancelExpense }) => {
     e.preventDefault();
     const expenseData = {
       title: expense.title,
-      amount: expense.amount,
+      amount: +expense.amount,
       date: new Date(expense.date),
     };
     userSubmit(expenseData);
     setExpense((prevExpense) => ({
       ...prevExpense,
       title: "",
-      amount: "",
+      amount: 0.01,
       date: "",
     }));
   };

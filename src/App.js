@@ -16,9 +16,10 @@ function App() {
   });
   const userInput = (inputData) => {
     inputData.id = nanoid();
-    setItemsData((prevData) => [inputData, ...prevData]);
+    if (inputData.title && inputData.date && inputData.amount) {
+      setItemsData((prevData) => [inputData, ...prevData]);
+    }
   };
-
   useEffect(() => {
     localStorage.setItem("itemsData", JSON.stringify(itemsData));
   }, [itemsData]);
