@@ -4,9 +4,11 @@ import "./NewExpense.css";
 
 const NewExpense = ({ userSubmit }) => {
   const [newExpense, setNewExpense] = useState(false);
+
   const addNewExpense = () => {
     setNewExpense((prevExpense) => !prevExpense);
   };
+
   return (
     <section className="new-expense">
       {!newExpense ? (

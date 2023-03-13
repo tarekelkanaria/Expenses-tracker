@@ -6,15 +6,19 @@ const ExpenseForm = ({ userSubmit, cancelExpense }) => {
     amount: 0.01,
     date: "",
   });
+
   const handleTitle = (e) => {
     setExpense((prevTitle) => ({ ...prevTitle, title: e.target.value }));
   };
+
   const handleAmount = (e) => {
     setExpense((prevAmount) => ({ ...prevAmount, amount: e.target.value }));
   };
+
   const handleDate = (e) => {
     setExpense((prevDate) => ({ ...prevDate, date: e.target.value }));
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const expenseData = {
@@ -30,6 +34,7 @@ const ExpenseForm = ({ userSubmit, cancelExpense }) => {
       date: "",
     }));
   };
+
   const handelCancel = (e) => {
     e.preventDefault();
     setExpense((prevExpense) => ({
@@ -40,6 +45,7 @@ const ExpenseForm = ({ userSubmit, cancelExpense }) => {
     }));
     cancelExpense();
   };
+
   return (
     <form onSubmit={handleSubmit}>
       <div className="new-expense__controls">

@@ -3,6 +3,7 @@ const ExpensesFilter = (props) => {
   const handleFilteredYear = (e) => {
     props.userFilteredYear(e.target.value);
   };
+
   return (
     <section className="expenses-filter">
       <div className="expenses-filter__control">

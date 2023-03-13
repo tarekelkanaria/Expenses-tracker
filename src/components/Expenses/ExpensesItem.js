@@ -4,6 +4,7 @@ const ExpensesItem = ({ items, fallback, remove }) => {
   const handleDelete = (e, itemId) => {
     remove(e, itemId);
   };
+
   const itemsElements = !items.length
     ? fallback
     : items.map((item) => {
